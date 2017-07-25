@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Facebook login</title>
+
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/main.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lalezar&Hind+Vadodara:300" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="logo">MyFakeBook</div>
+      <div class="login">
+        <div class="mailphone">
+          <p>Correo electrónico</p>
+          <input type="text" id="txtlogin" />
+        </div>
+        <div class="psw">
+          <p>Contraseña</p>
+          <input type="text" id="txtpsw" />
+          <p style="padding-top:5px;">¿Olvidaste tu cuenta?</p>
+        </div>
+        <div class="btnSubmit">
+          <p>&nbsp;</p>
+          <button id="btnlogin" onclick="autentificar(txtlogin.value,txtpsw.value);">Iniciar Sesión</button>
+        </div>
+      </div>
+    </header>
+
+    <div id="validaemail">* MAIL NO VÁLIDO</div>
+    <div id="validapsw">* EL PASSWORD DEBE TENER 8 CARACTERES</div>
+
+    <div class="container">
+      <div class="lastsesions">
+        <h1>Inicios de Sesión Recientes</h1>
+        <p>Haz clic en tu foto para iniciar sesión.</p>
+      </div>
+      <div class="contfrm">
+        <h1>Crear una cuenta</h1>
+        <p>Es gratis y lo será siempre.</p>
+        <div class="frmNewAccount">
+          <input type="text" id="txtname" value="Nombre" class="halfcontrol" onfocus="limpiar(this,'Nombre');" onblur="reestablecer(this,'Nombre');"/>
+          <input type="text" id="txtlastname" value="Apellido" class="halfcontrol" onfocus="limpiar(this,'Apellido');" onblur="reestablecer(this,'Apellido');"/>
+          <input type="text" id="txtmail" value="Correo electrónico" class="completecontrol" onfocus="limpiar(this,'Correo electrónico');" onblur="reestablecer(this,'Correo electrónico');"/>
+          <input type="text" id="txtnewpsw" value="Contraseña nueva" class="completecontrol"onfocus="limpiar(this,'Contraseña nueva');" onblur="reestablecer(this,'Contraseña nueva');"/>
+        </div>
+        <div class="frmNewAccount2">
+          <h2 style="width:100%;">Fecha de Nacimiento</h2>
+          <div class="divdate">
+            <input type="date" id="dtborndate" name="borndate" /><div style="width:20px;"></div>
+            <div class="msjdate"><a href="#">¿Por qué tengo que proporcionar mi fecha de nacimiento?</a></div>
+          </div>
+          <div class="divgender">
+            <input type="radio" name="gender" value="f" checked> Mujer<div style="width:20px;"></div>
+            <input type="radio" name="gender" value="m"> Hombre
+          </div>
+          <div class="divbtnnewaccount">
+            <div class="msjnewaccount">
+              Al hacer clic en "Crear cuenta", aceptas las Condiciones y confirmas que leíste
+              nuestra Política de datos, incluido el uso de cookies. Es posible que recibas
+              notificaciones por SMS de Facebook, que puedes desactivar en cualquier momento.
+            </div>
+            <div class="btnnewaccount">
+              <button id="btnCrearCuenta" onclick="adduser(txtname.value,txtlastname.value,txtmail.value,txtnewpsw.value, dtborndate.value, document.getElementsByName('gender'));">Crear Cuenta</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
